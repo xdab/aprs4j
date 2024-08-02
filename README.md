@@ -1,7 +1,6 @@
 # aprs4j
 
 [![Java CI](https://github.com/xdab/aprs4j/actions/workflows/1.pipeline.yml/badge.svg)](https://github.com/xdab/aprs4j/actions/workflows/1.pipeline.yml)
-[![Maven Central](https://img.shields.io/maven-central/v/pl.so5dz/aprs4j.svg)](https://central.sonatype.com/artifact/pl.so5dz/aprs4j)
 [![Javadoc](https://img.shields.io/badge/JavaDoc-Online-green)](https://xdab.github.io/aprs4j/javadoc/)
 
 TODO
