@@ -22,6 +22,7 @@ plugins {
     `java-library`
     `maven-publish`
     signing
+    jacoco
 }
 
 repositories {
@@ -40,6 +41,14 @@ val intTestImplementation by configurations.getting {
 }
 
 configurations["intTestRuntimeOnly"].extendsFrom(configurations.runtimeOnly.get())
+
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+}
 
 dependencies {
     testImplementation(libs.junit)
