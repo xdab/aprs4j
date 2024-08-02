@@ -3,14 +3,14 @@ group = "pl.so5dz"
 object Meta {
     const val release = "https://s01.oss.sonatype.org/service/local/"
     const val snapshot = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-    const val desc = "OSS GitHub Java Library Template Repository"
+    const val desc = "APRS library for Java"
     const val license = "Apache-2.0"
     const val licenseUrl = "https://opensource.org/licenses/Apache-2.0"
     const val githubRepo = "xdab/aprs4j"
     const val developerId = "xdab"
-    const val developerName = "Your Name"
-    const val developerOrganization = "ACME Corporation"
-    const val developerOrganizationUrl = "https://yourdomain.com"
+    const val developerName = "Przemysław Wcisło"
+    const val developerOrganization = "None"
+    const val developerOrganizationUrl = "https://github.com/xdab"
 }
 
 java {
