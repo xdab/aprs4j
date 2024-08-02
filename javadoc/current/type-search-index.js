@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"pl.so5dz.aprs4j","l":"JavaLibraryTemplate"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"pl.so5dz.aprs4j","l":"Callsign"}];updateSearchResults();
