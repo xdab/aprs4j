@@ -1,3 +1,3 @@
-rootProject.name = "java-library-template"
+rootProject.name = "aprs4j"
 
-include("java-library-template")
+include("aprs4j")

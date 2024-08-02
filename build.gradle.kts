@@ -1,4 +1,4 @@
-group = "dev.thriving.oss"
+group = "pl.so5dz"
 
 plugins {
     alias(libs.plugins.publish)

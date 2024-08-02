@@ -1,4 +1,4 @@
-package dev.thriving.oss.java.library.template;
+package pl.so5dz.aprs4j;
 
 /**
  * Javadoc for {@link JavaLibraryTemplate}
