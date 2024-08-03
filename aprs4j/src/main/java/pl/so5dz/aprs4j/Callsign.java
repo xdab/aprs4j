@@ -163,10 +163,18 @@ public class Callsign {
 
     /**
      * Sets a flag indicating the callsign has acted as a repeater.
+     * Known as HBR (has-been-repeated) bit in AX.25 protocol specification.
      *
      * @param repeated {@code true} if the callsign is repeated, {@code false} otherwise
      */
     public void setRepeated(boolean repeated) {
         this.repeated = repeated;
+    }
+
+    @Override
+    public String toString() {
+        return base
+                + (ssid != null ? CallsignConsts.SSID_SEPARATOR + ssid : "")
+                + (repeated ? CallsignConsts.REPEATED_MARKER : "");
     }
 }

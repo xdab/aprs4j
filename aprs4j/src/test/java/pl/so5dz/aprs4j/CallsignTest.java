@@ -188,4 +188,31 @@ class CallsignTest {
             assertTrue(callsign.isRepeated());
         }
     }
+
+    @Nested
+    public class CallsignToStringTest {
+        @Test
+        void callsignWithoutSSID() {
+            Callsign callsign = new Callsign("AB1CDE", null, false);
+            assertEquals("AB1CDE", callsign.toString());
+        }
+
+        @Test
+        void callsignWithSSID() {
+            Callsign callsign = new Callsign("AB1CDE", 15, false);
+            assertEquals("AB1CDE-15", callsign.toString());
+        }
+
+        @Test
+        void repeatedCallsign() {
+            Callsign callsign = new Callsign("AB1CDE", null, true);
+            assertEquals("AB1CDE*", callsign.toString());
+        }
+
+        @Test
+        void repeatedCallsignWithSSID() {
+            Callsign callsign = new Callsign("AB1CDE", 15, true);
+            assertEquals("AB1CDE-15*", callsign.toString());
+        }
+    }
 }
