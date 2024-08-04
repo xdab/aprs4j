@@ -14,4 +14,17 @@ public enum TimestampStructure {
     public int getLength() {
         return length;
     }
+
+    public static TimestampStructure fromIndicator(char indicator) {
+        if (indicator == TimestampConsts.INDICATOR_HMS_UTC) {
+            return HMS;
+        }
+        if (indicator == TimestampConsts.INDICATOR_DHM_LOCAL || indicator == TimestampConsts.INDICATOR_DHM_UTC) {
+            return DHM;
+        }
+        if (Character.isDigit(indicator)) {
+            return MDHM;
+        }
+        return null;
+    }
 }
