@@ -19,14 +19,16 @@ class PacketTest {
             assertEquals("RPT1*", packet.path.get(0).toString());
             assertEquals("RPT2*", packet.path.get(1).toString());
             assertEquals("RPT3*", packet.path.get(2).toString());
+            assertEquals("Hello World!", packet.info);
         }
 
         @Test
         void validPacketWithNoRepeaters() {
-            Packet packet = assertDoesNotThrow(() -> Packet.of("AB1-1>XY2-2:Hello World!"));
+            Packet packet = assertDoesNotThrow(() -> Packet.of("AB1-1>XY2-2:>status"));
             assertEquals("AB1-1", packet.source.toString());
             assertEquals("XY2-2", packet.destination.toString());
             assertEquals(0, packet.path.size());
+            assertEquals(">status", packet.info);
         }
 
         @Test

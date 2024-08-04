@@ -1,5 +1,7 @@
 package pl.so5dz.aprs4j;
 
+import pl.so5dz.aprs4j.payload.Payload;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,15 +13,14 @@ public class Packet {
     Callsign source;
     Callsign destination;
     List<Callsign> path;
+    String info;
     Payload payload;
-    String comment;
 
-    Packet(Callsign source, Callsign destination, List<Callsign> path, Payload payload, String comment) {
+    Packet(Callsign source, Callsign destination, List<Callsign> path, String info) {
         this.source = source;
         this.destination = destination;
         this.path = path;
-        this.payload = payload;
-        this.comment = comment;
+        this.info = info;
     }
 
     /**
@@ -49,11 +50,11 @@ public class Packet {
         if (parts.length < 2) {
             throw new IllegalArgumentException("Invalid packet: " + str + " (missing info separator)");
         }
-        String routingPart = parts[0];
-        String payloadPart = parts[1];
+        String routing = parts[0];
+        String info = parts[1];
 
         // Split the routing part into source and path (including destination)
-        String[] routingParts = routingPart.split(PacketConsts.DESTINATION_SEPARATOR, 2);
+        String[] routingParts = routing.split(PacketConsts.DESTINATION_SEPARATOR, 2);
         if (routingParts.length < 2) {
             throw new IllegalArgumentException("Invalid packet: " + str + " (missing destination separator)");
         }
@@ -67,6 +68,32 @@ public class Packet {
             path.add(Callsign.of(pathParts[i]));
         }
 
-        return new Packet(source, destination, path, null, payloadPart);
+        return new Packet(source, destination, path, info);
+    }
+
+    public Callsign getSource() {
+        return source;
+    }
+
+    public Callsign getDestination() {
+        return destination;
+    }
+
+    public List<Callsign> getPath() {
+        return path;
+    }
+
+    public String getInfo() {
+        return info;
+    }
+
+    /**
+     * Returns the payload of this packet.
+     * The payload is lazily initialized (parsed) and the result cached for subsequent calls.
+     *
+     * @return the payload
+     */
+    public Payload getPayload() {
+        return payload;
     }
 }
