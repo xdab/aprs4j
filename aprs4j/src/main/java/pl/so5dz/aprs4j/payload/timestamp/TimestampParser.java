@@ -13,7 +13,7 @@ public class TimestampParser {
             return null;
         }
 
-        char formatIndicator = field.charAt(field.length() - 1);
+        char formatIndicator = field.charAt(TimestampConsts.MIN_LENGTH - 1);
         TimestampStructure structure = TimestampStructure.fromIndicator(formatIndicator);
         TimestampZone zone = TimestampZone.fromIndicator(formatIndicator);
         if (structure == null || zone == null) {
