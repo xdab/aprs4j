@@ -1,12 +1,15 @@
 package pl.so5dz.aprs4j.payload;
 
+import pl.so5dz.aprs4j.payload.status.Status;
+
 /**
  * Represents an APRS packet payload.
- * Constructor is package-private, use {@link #of(String)} to create a new instance. <br>
+ * Constructor is package-private, use {@link #of(String)} to create a new
+ * instance. <br>
  */
 public class Payload {
     private Status status;
-    private String comment;
+    private String unparsed;
 
     /**
      * Creates a new {@link Payload} from a string.
@@ -15,9 +18,7 @@ public class Payload {
      * @return the new {@link Payload}
      */
     public static Payload of(String info) {
-        var payload = new Payload();
-        payload.setComment(info.substring(1));
-        return payload;
+        return PayloadParser.parse(info);
     }
 
     public Status getStatus() {
@@ -28,11 +29,11 @@ public class Payload {
         this.status = status;
     }
 
-    public String getComment() {
-        return comment;
+    public String getUnparsed() {
+        return unparsed;
     }
 
-    public void setComment(String comment) {
-        this.comment = comment;
+    public void setUnparsed(String unparsed) {
+        this.unparsed = unparsed;
     }
 }

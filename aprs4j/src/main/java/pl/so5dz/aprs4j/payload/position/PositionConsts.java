@@ -1,11 +1,9 @@
 package pl.so5dz.aprs4j.payload.position;
 
 public class PositionConsts {
-    public class Indicators {
-        public static final char NO_TIMESTAMP_NO_MESSAGING = '!';
-        public static final char TIMESTAMP_NO_MESSAGING = '/';
-        public static final char TIMESTAMP_MESSAGING = '@';
-        public static final char NO_TIMESTAMP_MESSAGING = '=';
-    }
+    public static final char INDICATOR_NT_NM = '!';
+    public static final char INDICATOR_T_NM = '/';
+    public static final char INDICATOR_T_M = '@';
+    public static final char INDICATOR_NT_M = '=';
 
 }
