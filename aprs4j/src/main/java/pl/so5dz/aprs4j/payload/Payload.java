@@ -1,6 +1,8 @@
 package pl.so5dz.aprs4j.payload;
 
+import pl.so5dz.aprs4j.payload.position.Position;
 import pl.so5dz.aprs4j.payload.status.Status;
+
 
 /**
  * Represents an APRS packet payload.
@@ -9,6 +11,7 @@ import pl.so5dz.aprs4j.payload.status.Status;
  */
 public class Payload {
     private Status status;
+    private Position position;
     private String unparsed;
 
     /**
@@ -27,6 +30,14 @@ public class Payload {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
     public String getUnparsed() {

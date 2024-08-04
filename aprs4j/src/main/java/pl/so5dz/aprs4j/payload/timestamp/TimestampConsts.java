@@ -7,6 +7,7 @@ public class TimestampConsts {
     public static final char INDICATOR_DHM_UTC = 'z';
     public static final char INDICATOR_HMS_UTC = 'h';
     public static final int MIN_LENGTH = 7;
+    public static final int MAX_LENGTH = 8;
 
     // Day (01-31), Hour (00-23), Minute (00-59)
     public static final Pattern TIMESTAMP_PATTERN_DHM

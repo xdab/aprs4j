@@ -1,5 +1,6 @@
 package pl.so5dz.aprs4j.payload;
 
+import pl.so5dz.aprs4j.payload.position.Position;
 import pl.so5dz.aprs4j.payload.status.Status;
 
 class PayloadParser {
@@ -14,6 +15,9 @@ class PayloadParser {
         switch (dataType) {
             case STATUS:
                 payload.setStatus(Status.of(info));
+                break;
+            case POSITION:
+                payload.setPosition(Position.of(info));
                 break;
             default:
                 payload.setUnparsed(info);

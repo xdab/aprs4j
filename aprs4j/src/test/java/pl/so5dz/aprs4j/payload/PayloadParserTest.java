@@ -13,6 +13,15 @@ public class PayloadParserTest {
         Payload payload = PayloadParser.parse(">Test");
         assertNotNull(payload);
         assertNotNull(payload.getStatus());
+        assertNull(payload.getPosition());
+    }
+
+    @Test
+    public void position() {
+        Payload payload = PayloadParser.parse("!5210.00N/02103.00W-Test");
+        assertNotNull(payload);
+        assertNull(payload.getStatus());
+        assertNotNull(payload.getPosition());
     }
 
     @Test
